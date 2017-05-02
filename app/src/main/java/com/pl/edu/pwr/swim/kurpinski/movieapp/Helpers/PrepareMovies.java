@@ -25,6 +25,25 @@ public class PrepareMovies {
         movie = new Movie("Star Wars: Episode VII - The Force Awakens", "Action", "2015","https://media.starwars.ea.com/content/starwars-ea-com/pl_PL/starwars/battlefront/news-articles/star-wars-battlefront-beta-tips-and-tricks--multiplayer-/_jcr_content/featuredImage/renditions/rendition1.img.jpg");
         movieList.add(movie);
 
+        movie = new Movie("Mad Max: Fury Road", "Action & Adventure", "2015","http://www.madmaxmovies.com/mad-max-fury-road/soundtrack/mad-max-fury-road-soundtrack.jpg");
+        movieList.add(movie);
+
+        movie = new Movie("Inside Out", "Animation, Kids & Family", "2015","http://www.cartoonbrew.com/wp-content/uploads/2014/10/insideout-teaser-2-580x328.jpg");
+        movieList.add(movie);
+
+        movie = new Movie("Star Wars: Episode VII - The Force Awakens", "Action", "2015","https://media.starwars.ea.com/content/starwars-ea-com/pl_PL/starwars/battlefront/news-articles/star-wars-battlefront-beta-tips-and-tricks--multiplayer-/_jcr_content/featuredImage/renditions/rendition1.img.jpg");
+        movieList.add(movie);
+        movie = new Movie("Mad Max: Fury Road", "Action & Adventure", "2015","http://www.madmaxmovies.com/mad-max-fury-road/soundtrack/mad-max-fury-road-soundtrack.jpg");
+        movieList.add(movie);
+
+        movie = new Movie("Inside Out", "Animation, Kids & Family", "2015","http://www.cartoonbrew.com/wp-content/uploads/2014/10/insideout-teaser-2-580x328.jpg");
+        movieList.add(movie);
+
+        movie = new Movie("Star Wars: Episode VII - The Force Awakens", "Action", "2015","https://media.starwars.ea.com/content/starwars-ea-com/pl_PL/starwars/battlefront/news-articles/star-wars-battlefront-beta-tips-and-tricks--multiplayer-/_jcr_content/featuredImage/renditions/rendition1.img.jpg");
+        movieList.add(movie);
+
+
+
         return movieList;
     }
 }

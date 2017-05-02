@@ -15,7 +15,6 @@ import butterknife.ButterKnife;
 
 public class MovieDetailActivity extends AppCompatActivity {
     @BindView(R.id.descriptionTV) TextView descriptionTv;
-    @BindView(R.id.titleTV) TextView titleTv;
     @BindView(R.id.ratingBar) RatingBar ratingBar;
     @BindView(R.id.imageView) ImageView imageView;
     private Movie movie;
@@ -26,6 +25,7 @@ public class MovieDetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_movie_detail);
         ButterKnife.bind(this);
         readMovieFromExtras();
+        this.setTitle(movie.getTitle());
         fillInformationsAboutMovie();
     }
     private void readMovieFromExtras(){
@@ -33,8 +33,6 @@ public class MovieDetailActivity extends AppCompatActivity {
     }
     private void fillInformationsAboutMovie(){
         descriptionTv.setText(movie.getDescription());
-        titleTv.setText(movie.getTitle());
-        titleTv.setText(movie.getTitle());
         ratingBar.setNumStars(movie.getRating());
         Picasso.with(getApplicationContext()).load(movie.getPhotoUrl())
                 .placeholder(R.mipmap.ic_launcher)
