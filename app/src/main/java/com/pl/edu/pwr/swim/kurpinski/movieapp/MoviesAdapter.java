@@ -13,7 +13,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.pl.edu.pwr.swim.kurpinski.movieapp.Helpers.Constants;
 import com.pl.edu.pwr.swim.kurpinski.movieapp.Interfaces.ItemTouchHelperAdapter;
+import com.squareup.picasso.Picasso;
+
 import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -48,7 +51,9 @@ public class MoviesAdapter extends RecyclerView.Adapter<MyViewHolder> implements
         holder.title.setText(movie.getTitle());
         holder.genre.setText(movie.getGenre());
         holder.year.setText(movie.getYear());
-        holder.photo.setImageBitmap(BitmapFactory.decodeResource(activity.getResources(), movie.getPhoto()));
+        Picasso.with(activity.getApplicationContext()).load(movie.getPhotoUrl())
+                .placeholder(R.mipmap.ic_launcher)
+                .into(holder.photo);
         holder.viewed.setVisibility(movie.getViewed() ? View.VISIBLE : View.GONE);
     }
     @Override
@@ -79,7 +84,7 @@ public class MoviesAdapter extends RecyclerView.Adapter<MyViewHolder> implements
     public Intent onClick(int position){
         Movie movie = moviesList.get(position);
         Intent intent = new Intent();
-        intent.putExtra("movie",movie);
+        intent.putExtra(Constants.SERIALIZABLE_MOVIE,movie);
         return intent;
     }
 }

@@ -16,53 +16,15 @@ import java.util.List;
 public class PrepareMovies {
     public static List<Movie> PrepareList(){
         List<Movie> movieList = new ArrayList<Movie>();
-        Movie movie = new Movie("Mad Max: Fury Road", "Action & Adventure", "2015",R.mipmap.ic_launcher);
+        Movie movie = new Movie("Mad Max: Fury Road", "Action & Adventure", "2015","http://www.madmaxmovies.com/mad-max-fury-road/soundtrack/mad-max-fury-road-soundtrack.jpg");
         movieList.add(movie);
 
-        movie = new Movie("Inside Out", "Animation, Kids & Family", "2015",R.mipmap.ic_launcher);
+        movie = new Movie("Inside Out", "Animation, Kids & Family", "2015","http://www.cartoonbrew.com/wp-content/uploads/2014/10/insideout-teaser-2-580x328.jpg");
         movieList.add(movie);
 
-        movie = new Movie("Star Wars: Episode VII - The Force Awakens", "Action", "2015",R.mipmap.ic_launcher);
+        movie = new Movie("Star Wars: Episode VII - The Force Awakens", "Action", "2015","https://media.starwars.ea.com/content/starwars-ea-com/pl_PL/starwars/battlefront/news-articles/star-wars-battlefront-beta-tips-and-tricks--multiplayer-/_jcr_content/featuredImage/renditions/rendition1.img.jpg");
         movieList.add(movie);
 
-//        movie = new Movie("Shaun the Sheep", "Animation", "2015");
-//        movieList.add(movie);
-//
-//        movie = new Movie("The Martian", "Science Fiction & Fantasy", "2015");
-//        movieList.add(movie);
-//
-//        movie = new Movie("Mission: Impossible Rogue Nation", "Action", "2015");
-//        movieList.add(movie);
-//
-//        movie = new Movie("Up", "Animation", "2009");
-//        movieList.add(movie);
-//
-//        movie = new Movie("Star Trek", "Science Fiction", "2009");
-//        movieList.add(movie);
-//
-//        movie = new Movie("The LEGO Movie", "Animation", "2014");
-//        movieList.add(movie);
-//
-//        movie = new Movie("Iron Man", "Action & Adventure", "2008");
-//        movieList.add(movie);
-//
-//        movie = new Movie("Aliens", "Science Fiction", "1986");
-//        movieList.add(movie);
-//
-//        movie = new Movie("Chicken Run", "Animation", "2000");
-//        movieList.add(movie);
-//
-//        movie = new Movie("Back to the Future", "Science Fiction", "1985");
-//        movieList.add(movie);
-//
-//        movie = new Movie("Raiders of the Lost Ark", "Action & Adventure", "1981");
-//        movieList.add(movie);
-//
-//        movie = new Movie("Goldfinger", "Action & Adventure", "1965");
-//        movieList.add(movie);
-//
-//        movie = new Movie("Guardians of the Galaxy", "Science Fiction & Fantasy", "2014");
-//        movieList.add(movie);
         return movieList;
     }
 }

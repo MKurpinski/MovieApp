@@ -1,11 +1,14 @@
 package com.pl.edu.pwr.swim.kurpinski.movieapp;
 
-import android.graphics.BitmapFactory;
+
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
+
+import com.pl.edu.pwr.swim.kurpinski.movieapp.Helpers.Constants;
+import com.squareup.picasso.Picasso;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -26,14 +29,15 @@ public class MovieDetailActivity extends AppCompatActivity {
         fillInformationsAboutMovie();
     }
     private void readMovieFromExtras(){
-
-        movie =(Movie) getIntent().getSerializableExtra("movie");
+        movie =(Movie) getIntent().getSerializableExtra(Constants.SERIALIZABLE_MOVIE);
     }
     private void fillInformationsAboutMovie(){
         descriptionTv.setText(movie.getDescription());
         titleTv.setText(movie.getTitle());
         titleTv.setText(movie.getTitle());
         ratingBar.setNumStars(movie.getRating());
-        imageView.setImageBitmap(BitmapFactory.decodeResource(getResources(), movie.getPhoto()));
+        Picasso.with(getApplicationContext()).load(movie.getPhotoUrl())
+                .placeholder(R.mipmap.ic_launcher)
+                .into(imageView);
     }
 }
