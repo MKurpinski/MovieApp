@@ -1,41 +1,51 @@
 package com.pl.edu.pwr.swim.kurpinski.movieapp;
 
 
-import android.support.v7.app.AppCompatActivity;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
-import android.widget.ImageView;
-import android.widget.RatingBar;
-import android.widget.TextView;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.ViewPager;
 
 import com.pl.edu.pwr.swim.kurpinski.movieapp.Helpers.Constants;
-import com.squareup.picasso.Picasso;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class MovieDetailActivity extends AppCompatActivity {
-    @BindView(R.id.descriptionTV) TextView descriptionTv;
-    @BindView(R.id.ratingBar) RatingBar ratingBar;
-    @BindView(R.id.imageView) ImageView imageView;
+public class MovieDetailActivity extends FragmentActivity {
+    @BindView(R.id.viewPager) ViewPager pager;
     private Movie movie;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_movie_detail);
+        setContentView(R.layout.movie_details_view_pager);
         ButterKnife.bind(this);
         readMovieFromExtras();
         this.setTitle(movie.getTitle());
-        fillInformationsAboutMovie();
+        pager.setAdapter(new MyPagerAdapter(getSupportFragmentManager()));
     }
     private void readMovieFromExtras(){
         movie =(Movie) getIntent().getSerializableExtra(Constants.SERIALIZABLE_MOVIE);
     }
-    private void fillInformationsAboutMovie(){
-        descriptionTv.setText(movie.getDescription());
-        ratingBar.setNumStars(movie.getRating());
-        Picasso.with(getApplicationContext()).load(movie.getPhotoUrl())
-                .placeholder(R.mipmap.ic_launcher)
-                .into(imageView);
+    private class MyPagerAdapter extends FragmentPagerAdapter {
+
+        public MyPagerAdapter(FragmentManager fm) {
+            super(fm);
+        }
+
+        @Override
+        public Fragment getItem(int pos) {
+            switch(pos) {
+                case Constants.MOVIE_DESCRIPTION_INDEX: return MovieDescriptionFragment.newInstance(movie);
+                case Constants.MOVIE_PICTURES_INDEX: return MoviePicturesFragment.newInstance(movie);
+                default:return MovieDescriptionFragment.newInstance(movie);
+            }
+        }
+        @Override
+        public int getCount() {
+            return Constants.NUMBER_OF_FRAGMENTS;
+        }
     }
 }
+

@@ -2,4 +2,6 @@
     <string name="app_name">MovieApp</string>
     <string name="rate">Rate: </string>
     <string name="description">DESCRIPTION</string>
-</resources>
+    <string name="title_activity_details">DetailsActivity</string>
+    <string name="defaut_actor">Jan Kowalski</string>
+    </resources>
