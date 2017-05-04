@@ -22,30 +22,10 @@ public class MovieDetailActivity extends FragmentActivity {
         setContentView(R.layout.movie_details_view_pager);
         ButterKnife.bind(this);
         readMovieFromExtras();
-        this.setTitle(movie.getTitle());
-        pager.setAdapter(new MyPagerAdapter(getSupportFragmentManager()));
+        pager.setAdapter(new MyPagerAdapter(getSupportFragmentManager(),movie));
     }
-    private void readMovieFromExtras(){
-        movie =(Movie) getIntent().getSerializableExtra(Constants.SERIALIZABLE_MOVIE);
-    }
-    private class MyPagerAdapter extends FragmentPagerAdapter {
-
-        public MyPagerAdapter(FragmentManager fm) {
-            super(fm);
-        }
-
-        @Override
-        public Fragment getItem(int pos) {
-            switch(pos) {
-                case Constants.MOVIE_DESCRIPTION_INDEX: return MovieDescriptionFragment.newInstance(movie);
-                case Constants.MOVIE_PICTURES_INDEX: return MoviePicturesFragment.newInstance(movie);
-                default:return MovieDescriptionFragment.newInstance(movie);
-            }
-        }
-        @Override
-        public int getCount() {
-            return Constants.NUMBER_OF_FRAGMENTS;
-        }
+    private void readMovieFromExtras() {
+        movie = (Movie) getIntent().getSerializableExtra(Constants.SERIALIZABLE_MOVIE);
     }
 }
 

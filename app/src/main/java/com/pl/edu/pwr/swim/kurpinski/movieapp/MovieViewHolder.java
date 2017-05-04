@@ -12,7 +12,7 @@ import butterknife.ButterKnife;
  * Created by michal on 21.04.2017.
  */
 
-public class MyViewHolder extends RecyclerView.ViewHolder {
+public class MovieViewHolder extends RecyclerView.ViewHolder {
 
     @BindView(R.id.title) TextView title;
     @BindView(R.id.year) TextView year;
@@ -20,7 +20,7 @@ public class MyViewHolder extends RecyclerView.ViewHolder {
     @BindView(R.id.photo)ImageView photo;
     @BindView(R.id.eye)ImageView viewed;
 
-    public MyViewHolder(View view) {
+    public MovieViewHolder(View view) {
         super(view);
         ButterKnife.bind(this,view);
     }

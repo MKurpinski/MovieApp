@@ -22,6 +22,7 @@ import butterknife.ButterKnife;
 
 public class MovieDescriptionFragment extends Fragment {
     @BindView(R.id.descriptionTV) TextView descriptionTv;
+    @BindView(R.id.title) TextView title;
     @BindView(R.id.ratingBar) RatingBar ratingBar;
     @BindView(R.id.imageView) ImageView imageView;
 
@@ -44,6 +45,7 @@ public class MovieDescriptionFragment extends Fragment {
         descriptionTv.setMovementMethod(new ScrollingMovementMethod());
         descriptionTv.setText(movie.getDescription());
         ratingBar.setNumStars(movie.getRating());
+        title.setText(movie.getTitle());
         Picasso.with(this.getContext()).load(movie.getPhotoUrl())
                 .placeholder(R.mipmap.ic_launcher)
                 .into(imageView);

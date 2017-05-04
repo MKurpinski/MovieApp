@@ -27,7 +27,7 @@ import static com.pl.edu.pwr.swim.kurpinski.movieapp.R.id.parent;
  * Created by michal on 04.04.2017.
  */
 
-public class MoviesAdapter extends RecyclerView.Adapter<MyViewHolder> implements ItemTouchHelperAdapter {
+public class MoviesAdapter extends RecyclerView.Adapter<MovieViewHolder> implements ItemTouchHelperAdapter {
 
     private boolean canLongClick = false;
     private Activity activity;
@@ -39,14 +39,14 @@ public class MoviesAdapter extends RecyclerView.Adapter<MyViewHolder> implements
     }
 
     @Override
-    public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public MovieViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
                 .inflate(viewType%2==0?R.layout.movie_list_row_left:R.layout.movie_list_row_right, parent, false);
-        return new MyViewHolder(itemView);
+        return new MovieViewHolder(itemView);
     }
 
     @Override
-    public void onBindViewHolder(MyViewHolder holder, int position) {
+    public void onBindViewHolder(MovieViewHolder holder, int position) {
         Movie movie = moviesList.get(position);
         holder.title.setText(movie.getTitle());
         holder.genre.setText(movie.getGenre());
