@@ -1,4 +1,4 @@
-package com.pl.edu.pwr.swim.kurpinski.movieapp;
+package com.pl.edu.pwr.swim.kurpinski.movieapp.Models;
 
 import com.pl.edu.pwr.swim.kurpinski.movieapp.Helpers.Constants;
 

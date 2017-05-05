@@ -1,27 +1,21 @@
-package com.pl.edu.pwr.swim.kurpinski.movieapp;
+package com.pl.edu.pwr.swim.kurpinski.movieapp.Activities.Fragments;
 
 import android.os.Bundle;
-import android.os.Environment;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.DefaultItemAnimator;
-import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.GridView;
-import android.widget.ImageView;
-import android.widget.TextView;
-import android.widget.Toast;
 
+import com.pl.edu.pwr.swim.kurpinski.movieapp.Adapters.ActorsAdapter;
+import com.pl.edu.pwr.swim.kurpinski.movieapp.Adapters.ImageAdapter;
 import com.pl.edu.pwr.swim.kurpinski.movieapp.Helpers.Constants;
-import com.pl.edu.pwr.swim.kurpinski.movieapp.Helpers.PrepareMovies;
-import com.pl.edu.pwr.swim.kurpinski.movieapp.TouchHandlers.SimpleItemTouchHelperCallback;
-import com.squareup.picasso.Picasso;
-
-import java.io.File;
+import com.pl.edu.pwr.swim.kurpinski.movieapp.Models.Actor;
+import com.pl.edu.pwr.swim.kurpinski.movieapp.Models.Movie;
+import com.pl.edu.pwr.swim.kurpinski.movieapp.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

@@ -1,10 +1,6 @@
 package com.pl.edu.pwr.swim.kurpinski.movieapp.Helpers;
 
-import android.app.Activity;
-import android.graphics.BitmapFactory;
-
-import com.pl.edu.pwr.swim.kurpinski.movieapp.Movie;
-import com.pl.edu.pwr.swim.kurpinski.movieapp.R;
+import com.pl.edu.pwr.swim.kurpinski.movieapp.Models.Movie;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,8 +1,7 @@
-package com.pl.edu.pwr.swim.kurpinski.movieapp;
-
-import android.graphics.Bitmap;
+package com.pl.edu.pwr.swim.kurpinski.movieapp.Models;
 
 import com.pl.edu.pwr.swim.kurpinski.movieapp.Helpers.Constants;
+import com.pl.edu.pwr.swim.kurpinski.movieapp.Models.Actor;
 
 import java.io.Serializable;
 

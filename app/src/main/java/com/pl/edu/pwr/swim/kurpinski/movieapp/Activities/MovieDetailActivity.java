@@ -1,14 +1,14 @@
-package com.pl.edu.pwr.swim.kurpinski.movieapp;
+package com.pl.edu.pwr.swim.kurpinski.movieapp.Activities;
 
 
-import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 
+import com.pl.edu.pwr.swim.kurpinski.movieapp.Adapters.MyPagerAdapter;
 import com.pl.edu.pwr.swim.kurpinski.movieapp.Helpers.Constants;
+import com.pl.edu.pwr.swim.kurpinski.movieapp.Models.Movie;
+import com.pl.edu.pwr.swim.kurpinski.movieapp.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

@@ -1,27 +1,20 @@
-package com.pl.edu.pwr.swim.kurpinski.movieapp;
+package com.pl.edu.pwr.swim.kurpinski.movieapp.Adapters;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.pl.edu.pwr.swim.kurpinski.movieapp.Helpers.Constants;
 import com.pl.edu.pwr.swim.kurpinski.movieapp.Interfaces.ItemTouchHelperAdapter;
+import com.pl.edu.pwr.swim.kurpinski.movieapp.Models.Movie;
+import com.pl.edu.pwr.swim.kurpinski.movieapp.R;
+import com.pl.edu.pwr.swim.kurpinski.movieapp.ViewHolders.MovieViewHolder;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
-import butterknife.BindView;
-import butterknife.ButterKnife;
-
-import static com.pl.edu.pwr.swim.kurpinski.movieapp.R.id.parent;
 
 /**
  * Created by michal on 04.04.2017.
@@ -41,7 +34,7 @@ public class MoviesAdapter extends RecyclerView.Adapter<MovieViewHolder> impleme
     @Override
     public MovieViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
-                .inflate(viewType%2==0?R.layout.movie_list_row_left:R.layout.movie_list_row_right, parent, false);
+                .inflate(viewType%2==0? R.layout.movie_list_row_left:R.layout.movie_list_row_right, parent, false);
         return new MovieViewHolder(itemView);
     }
 

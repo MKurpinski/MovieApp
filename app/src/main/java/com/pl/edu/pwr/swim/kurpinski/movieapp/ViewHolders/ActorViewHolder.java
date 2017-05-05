@@ -1,9 +1,11 @@
-package com.pl.edu.pwr.swim.kurpinski.movieapp;
+package com.pl.edu.pwr.swim.kurpinski.movieapp.ViewHolders;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.pl.edu.pwr.swim.kurpinski.movieapp.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -13,8 +15,8 @@ import butterknife.ButterKnife;
  */
 
 public class ActorViewHolder extends RecyclerView.ViewHolder {
-    @BindView(R.id.actorData) TextView actorData;
-    @BindView(R.id.actorPhoto)ImageView actorPhoto;
+    @BindView(R.id.actorData)public TextView actorData;
+    @BindView(R.id.actorPhoto)public ImageView actorPhoto;
 
     public ActorViewHolder(View view) {
         super(view);

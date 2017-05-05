@@ -1,4 +1,4 @@
-package com.pl.edu.pwr.swim.kurpinski.movieapp;
+package com.pl.edu.pwr.swim.kurpinski.movieapp.Activities;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -9,10 +9,11 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.View;
-import android.widget.Toast;
 
+import com.pl.edu.pwr.swim.kurpinski.movieapp.Adapters.MoviesAdapter;
 import com.pl.edu.pwr.swim.kurpinski.movieapp.Helpers.PrepareMovies;
 import com.pl.edu.pwr.swim.kurpinski.movieapp.Interfaces.ClickListener;
+import com.pl.edu.pwr.swim.kurpinski.movieapp.R;
 import com.pl.edu.pwr.swim.kurpinski.movieapp.TouchHandlers.RecyclerTouchListener;
 import com.pl.edu.pwr.swim.kurpinski.movieapp.TouchHandlers.SimpleItemTouchHelperCallback;
 
@@ -28,21 +29,25 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-        mAdapter = new MoviesAdapter(PrepareMovies.PrepareList(),this);
         SetUpTheRecyclerView();
-        recyclerView.addOnItemTouchListener(getRecyclerTouchListener());
     }
 
     private void SetUpTheRecyclerView() {
-        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
-        recyclerView.setLayoutManager(mLayoutManager);
+        mAdapter = new MoviesAdapter(PrepareMovies.PrepareList(),this);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(mAdapter);
         recyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
+        SetUpTouchHelper();
+        recyclerView.addOnItemTouchListener(getRecyclerTouchListener());
+}
+
+    private void SetUpTouchHelper() {
         ItemTouchHelper.Callback callback = new SimpleItemTouchHelperCallback(mAdapter);
         ItemTouchHelper touchHelper = new ItemTouchHelper(callback);
         touchHelper.attachToRecyclerView(recyclerView);
-}
+    }
+
     private RecyclerTouchListener getRecyclerTouchListener(){
         return new RecyclerTouchListener(getApplicationContext(), recyclerView, getClickListener());
     }

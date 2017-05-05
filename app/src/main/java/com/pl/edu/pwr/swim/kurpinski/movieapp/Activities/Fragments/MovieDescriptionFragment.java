@@ -1,4 +1,4 @@
-package com.pl.edu.pwr.swim.kurpinski.movieapp;
+package com.pl.edu.pwr.swim.kurpinski.movieapp.Activities.Fragments;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -11,6 +11,8 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.pl.edu.pwr.swim.kurpinski.movieapp.Helpers.Constants;
+import com.pl.edu.pwr.swim.kurpinski.movieapp.Models.Movie;
+import com.pl.edu.pwr.swim.kurpinski.movieapp.R;
 import com.squareup.picasso.Picasso;
 
 import butterknife.BindView;

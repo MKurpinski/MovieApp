@@ -5,7 +5,7 @@
     android:id="@+id/activity_movie_detail"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.pl.edu.pwr.swim.kurpinski.movieapp.MovieDetailActivity">
+    tools:context="com.pl.edu.pwr.swim.kurpinski.movieapp.Activities.MovieDetailActivity">
 
     <android.support.constraint.Guideline
         android:layout_width="683dp"
